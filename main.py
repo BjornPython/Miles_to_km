@@ -9,8 +9,8 @@ window.config(padx=50, pady=50)
 
 def button_pressed():
     kilometers = int(user_input.get()) * 1.60934  # Mile to kilometer conversion formula.
-    answer.delete(0, END)
-    answer.insert(END, str(kilometers))
+    answer.delete(0, END)  # Deletes the previous text inside the answer box. 
+    answer.insert(END, str(kilometers))  # Inserts the new answer in the answer box.
     print("BUTTON PRESSED!")
 
 
