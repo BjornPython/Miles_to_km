@@ -9,16 +9,16 @@ window.config(padx=50, pady=50)
 
 def mtokm_button_pressed():
     """Deletes the previous answer, and Calculates and inputs the ammount of Kilometers. """
-    kilometers = int(user_input.get()) * 1.60934  # Miles to kilometers conversion formula.
+    kilometers = float(user_input.get()) * 1.60934  # Miles to kilometers conversion formula.
     answer.delete(0, END)  # Deletes the previous text inside the answer box.
     answer.insert(END, str(kilometers))  # Inserts the new answer in the answer box.
 
 
 def kmtom_button_pressed():
     """Deletes the previous answer, and Calculates and inputs the ammount of Miles. """
-    kilometers = int(user_input.get()) / 1.60934  # Kilometers to Miles conversion formula.
+    miles = float(user_input.get()) / 1.60934  # Kilometers to Miles conversion formula.
     answer.delete(0, END)  # Deletes the previous text inside the answer box.
-    answer.insert(END, str(kilometers))  # Inserts the new answer in the answer box.
+    answer.insert(END, str(miles))  # Inserts the new answer in the answer box.
 
 
 def switch():
