@@ -9,16 +9,18 @@ window.config(padx=50, pady=50)
 
 def mtokm_button_pressed():
     """Deletes the previous answer, and Calculates and inputs the ammount of Kilometers. """
-    kilometers = float(user_input.get()) * 1.60934  # Miles to kilometers conversion formula.
+    kilometers = int(user_input.get()) * 1.60934  # Miles to kilometers conversion formula.
     answer.delete(0, END)  # Deletes the previous text inside the answer box.
     answer.insert(END, str(kilometers))  # Inserts the new answer in the answer box.
+    print("BUTTON PRESSED!")
 
 
 def kmtom_button_pressed():
     """Deletes the previous answer, and Calculates and inputs the ammount of Miles. """
-    miles = float(user_input.get()) / 1.60934  # Kilometers to Miles conversion formula.
+    kilometers = int(user_input.get()) * 0.621371  # Kilometers to Miles conversion formula.
     answer.delete(0, END)  # Deletes the previous text inside the answer box.
-    answer.insert(END, str(miles))  # Inserts the new answer in the answer box.
+    answer.insert(END, str(kilometers))  # Inserts the new answer in the answer box.
+    print("BUTTON PRESSED!")
 
 
 def switch():
@@ -30,7 +32,7 @@ def switch():
         second_label.config(text="Miles")
         calculate.config(command=kmtom_button_pressed)
 
-    elif first_label["text"] == "Kilometers":
+    else:
         answer.delete(0, END)
         first_label.config(text="Miles")
         second_label.config(text="Kilometers")
